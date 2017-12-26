@@ -23,6 +23,10 @@ def help(bot, update):
 def main():
 	updater = Updater(TOKEN)
 	
+	dp = updater.dispatcher
+
+	dp.add_handler(CommandHandler("start", start))
+	dp.add_handler(CommandHandler("help", help))
 
 
 	updater.idle()
