@@ -27,7 +27,11 @@ def main():
 
 	dp.add_handler(CommandHandler("start", start))
 	dp.add_handler(CommandHandler("help", help))
-	updater.start_polling()
+
+	updater.start_webhook(listen="0.0.0.0",
+                          port=PORT,
+                          url_path=TOKEN)
+	updater.bot.set_webhook("https://obscure-tor-25194.herokuapp.com/" + TOKEN)
 
 	updater.idle()
 
