@@ -27,9 +27,10 @@ def main():
 
 	dp.add_handler(CommandHandler("start", start))
 	dp.add_handler(CommandHandler("help", help))
-
+	updater.start_polling()
 
 	updater.idle()
+
 
 
 
