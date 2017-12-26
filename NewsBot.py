@@ -17,7 +17,8 @@ def start(bot, update):
 def help(bot, update):
 	update.message.reply_text(stringHowItWorks)
 
-
+def sendAlert(bot, update, msg):
+	update.message.reply_text(msg)
 
 
 def main():
@@ -32,6 +33,7 @@ def main():
                           port=PORT,
                           url_path=TOKEN)
 	updater.bot.set_webhook("https://obscure-tor-25194.herokuapp.com/" + TOKEN)
+	sendAlert(bot, update, msg)
 
 	updater.idle()
 
