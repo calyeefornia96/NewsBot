@@ -17,8 +17,8 @@ def start(bot, update):
 def help(bot, update):
 	update.message.reply_text(stringHowItWorks)
 
-def sendAlert(bot, update, msg):
-	update.message.reply_text(msg)
+def sendAlert(bot, update):
+	update.message.reply_text("test")
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
 
 	dp.add_handler(CommandHandler("start", start))
 	dp.add_handler(CommandHandler("help", help))
-
+	dp.add_handler(Handler(sendAlert))
 	updater.start_webhook(listen="0.0.0.0",
                           port=PORT,
                           url_path=TOKEN)
